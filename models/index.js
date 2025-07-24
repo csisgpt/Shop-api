@@ -1,12 +1,13 @@
 const { Sequelize } = require('sequelize');
+const dbConfig = require('../config/db.config');
 
 const sequelize = new Sequelize(
-  process.env.DB_NAME || 'shopdb',
-  process.env.DB_USER || 'root',
-  process.env.DB_PASSWORD || '',
+  dbConfig.DB,
+  dbConfig.USER,
+  dbConfig.PASSWORD,
   {
-    host: process.env.DB_HOST || 'localhost',
-    dialect: 'mysql',
+    host: dbConfig.HOST,
+    dialect: dbConfig.dialect,
     logging: false,
   }
 );
