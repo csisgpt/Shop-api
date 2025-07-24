@@ -5,6 +5,7 @@ const categoryRoutes = require('./routes/categories');
 const productRoutes = require('./routes/products');
 const authRoutes = require('./routes/auth');
 const orderRoutes = require('./routes/orders');
+const errorHandler = require('./middleware/errorHandler');
 
 const app = express();
 
@@ -14,6 +15,7 @@ app.use('/categories', categoryRoutes);
 app.use('/products', productRoutes);
 app.use('/auth', authRoutes);
 app.use('/orders', orderRoutes);
+app.use(errorHandler);
 
 const start = async () => {
   try {
