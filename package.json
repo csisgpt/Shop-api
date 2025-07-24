@@ -1,0 +1,17 @@
+{
+  "name": "shop-api",
+  "version": "1.0.0",
+  "description": "## Project Overview",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "sequelize": "^6.37.1",
+    "mysql2": "^3.9.7",
+    "bcrypt": "^5.1.1"
+  }
+}
