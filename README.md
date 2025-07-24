@@ -68,6 +68,68 @@ Below are sample prompts you can provide to Codex to generate this API backend. 
 
    > "Use multer to upload product images to the `uploads/` directory and store the file path on the product model."
 
+## ðŸ§° Codex Prompts â€“ E-Commerce Utilities & Helpers
+
+1. **Pagination Helper**
+
+   ```
+   Create a utility function for paginating Sequelize queries.
+
+   Input:
+   - req.query.page (default 1)
+   - req.query.limit (default 10)
+
+   Output:
+   - limit and offset values for Sequelize query
+   - currentPage and totalPages if totalCount is passed
+   ```
+
+2. **Error Handler Middleware**
+
+   ```
+   Create an Express error handling middleware.
+
+   Behavior:
+   - Catches any thrown errors
+   - Logs the error to console
+   - Sends a response with status 500 and JSON: { message: "Internal Server Error" }
+   - If the error has a 'statusCode' or 'message' property, use them instead
+   ```
+
+3. **JWT Authentication Middleware**
+
+   ```
+   Create Express middleware to authenticate users using JWT.
+
+   Steps:
+   - Read token from Authorization header
+   - Verify the token using jsonwebtoken
+   - Attach user info to req.user
+   - Return 401 if token is missing or invalid
+   ```
+
+4. **Admin-Only Middleware**
+
+   ```
+   Create an Express middleware that allows access only to admin users.
+
+   Behavior:
+   - Check if req.user.role is 'admin'
+   - If not, respond with 403 Forbidden
+   ```
+
+5. **Multer Upload Config**
+
+   ```
+   Create a Multer configuration to handle single file upload.
+
+   Behavior:
+   - Accepts only image files (jpg, jpeg, png)
+   - Stores them in the /uploads directory
+   - Saves original filename or generates a unique one
+   - Limits file size to 2MB
+   ```
+
 ## Final Notes
 
 This README acts as both a business and technical reference for the project. With these requirements and prompts, Codex can generate a full backend system implementing authentication, product management, order handling, and more.
